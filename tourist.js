@@ -127,6 +127,10 @@
       return false;
     };
 
+    Base.prototype.onClickHide = function(event) {
+    	$(this).closest('.tourist-popover').hide();
+    };
+
     /*
     Private
     */
@@ -140,6 +144,7 @@
       var el;
       el = this._getTipElement();
       el.delegate('.tour-close', 'click', this.onClickClose);
+      el.delegate('.tour-hide', 'click', this.onClickHide);
       return el.delegate('.tour-next', 'click', this.onClickNext);
     };
 
